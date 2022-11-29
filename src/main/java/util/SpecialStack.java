@@ -14,6 +14,12 @@ public class SpecialStack<T> {
     public T pop(){
         return specialStack.removeFirst();
     }
+    public String size(){
+        return String.valueOf(specialStack.size());
+    }
+    public void removeAll(){
+        specialStack.clear();
+    }
     public T getIndex(int index) {
         return specialStack.get(index);
     }
