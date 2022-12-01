@@ -33,13 +33,13 @@
                   </VBox>
                </children>
             </AnchorPane>
+            <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="205.0" lineSpacing="1.0" prefHeight="36.0" prefWidth="145.0" style="-fx-border-radius: 10; -fx-background-color: #3eb0ea; -fx-border-style: solid; -fx-background-radius: 10;" text="0" textAlignment="CENTER" textFill="#030303" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
             <VBox fx:id="stackVBox" layoutX="442.0" layoutY="292.0" style="-fx-spacing: 1;">
                <children>
-                  <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="36.0" prefWidth="145.0" style="-fx-border-radius: 10; -fx-background-color: #3eb0ea; -fx-border-style: solid; -fx-background-radius: 10;" text="0" textAlignment="CENTER" textFill="#030303" textOverrun="CENTER_ELLIPSIS">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="label2" alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="36.0" prefWidth="145.0" style="-fx-border-radius: 10; -fx-background-color: #3eb0ea; -fx-border-style: solid; -fx-background-radius: 10;" text="0" textAlignment="CENTER" textFill="#030303" textOverrun="CENTER_ELLIPSIS">
                      <font>
                         <Font size="22.0" />
@@ -102,7 +102,7 @@
                   <Font name="Segoe UI Historic" size="19.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="411.0" layoutY="223.0" prefHeight="47.0" prefWidth="207.0" text="Стек: " textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="411.0" layoutY="134.0" prefHeight="47.0" prefWidth="207.0" text="Стек: " textAlignment="CENTER">
                <font>
                   <Font name="Segoe UI Historic" size="19.0" />
                </font>
@@ -120,6 +120,26 @@
             <Label fx:id="numberElem" alignment="CENTER" layoutX="809.0" layoutY="46.0" prefHeight="36.0" prefWidth="64.0">
                <font>
                   <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="658.0" layoutY="158.0" prefHeight="47.0" prefWidth="207.0" text="Индекс текущего элемента:" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="indexNow" alignment="CENTER" layoutX="658.0" layoutY="200.0" prefHeight="47.0" prefWidth="207.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="indexNext" alignment="CENTER" layoutX="658.0" layoutY="283.0" prefHeight="47.0" prefWidth="207.0" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="650.0" layoutY="241.0" prefHeight="47.0" prefWidth="246.0" text="Индекс следующего элемента:" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
                </font>
             </Label>
          </children>

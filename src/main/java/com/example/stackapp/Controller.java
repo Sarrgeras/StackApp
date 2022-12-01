@@ -25,6 +25,11 @@ public class Controller {
     }
 
     @FXML
+    private Label indexNext;
+
+    @FXML
+    private Label indexNow;
+    @FXML
     private Button aboutProgram;
     @FXML
     private Label addLabel;
@@ -86,6 +91,9 @@ public class Controller {
         SpecialStack<String> specialStack = new SpecialStack<>();
         RandomGenerating randomGenerating = new RandomGenerating();
         ArrayList<Label> labels = new ArrayList<>();
+        ArrayList<Label> indexLabel = new ArrayList<>();
+        indexLabel.add(0, indexNow);
+        indexLabel.add(1, indexNext);
         showingStack.setOnAction(actionEvent -> {
 
             if (!specialStack.empty()){
@@ -106,9 +114,13 @@ public class Controller {
                 labels.add(9, label10);
                 for (int i = 0; i < 10; i++) {
                     labels.get(i).setText(specialStack.getIndex(i));
+                    if (i < 2){
+                        indexLabel.get(i).setText(Integer.toHexString(Integer.parseInt(specialStack.getIndex(i))));
+                    }
                 }
             }
             else{
+                int ch = 0;
                 for (int i = 0; i < 10; i++) {
                     specialStack.push(randomGenerating.stackGenerate());
                 }
@@ -125,16 +137,24 @@ public class Controller {
                 labels.add(9, label10);
                 for (int i = 0; i < 10; i++) {
                     labels.get(i).setText(specialStack.getIndex(i));
+                    if (i < 2){
+                        indexLabel.get(i).setText(Integer.toHexString(Integer.parseInt(specialStack.getIndex(i))));
+                    }
                 }
             }
+
             numberElem.setText(specialStack.size());
         });
+
         addToStack.setOnAction(actionEvent -> {
             try {
                 specialStack.push(randomGenerating.stackGenerate());
                 for (int i = 0; i < 10; i++) {
                     try{
                         labels.get(i).setText(specialStack.getIndex(i));
+                        if (i < 2){
+                            indexLabel.get(i).setText(Integer.toHexString(Integer.parseInt(specialStack.getIndex(i))));
+                        }
                     }catch (Exception ex){
                         labels.get(i).setText("0");
                     }
@@ -152,6 +172,7 @@ public class Controller {
             }
 
         });
+
         removeFromStack.setOnAction(actionEvent -> {
 
             try {
@@ -159,6 +180,9 @@ public class Controller {
                 for (int i = 0; i < 10; i++) {
                     try {
                         labels.get(i).setText(specialStack.getIndex(i));
+                        if (i < 2){
+                            indexLabel.get(i).setText(Integer.toHexString(Integer.parseInt(specialStack.getIndex(i))));
+                        }
                     }catch (Exception ex){
                         labels.get(i).setText("0");
                     }
@@ -175,6 +199,7 @@ public class Controller {
             }
             numberElem.setText(specialStack.size());
         });
+
         aboutProgram.setOnAction(actionEvent -> {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Разработчик");
